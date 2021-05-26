@@ -21,27 +21,6 @@ Limitations:
 
 1.Hardcoded the parameters(Location,APPID & units) for the API, we can also use String[] args in the main() method to pass in desired parameters
 
-Sample Output:
-
-=====================Weather Forecast for next 6 days=========================
-
-Date:2021-05-26 Timestamp:06:00:00 Weather:clear sky Temperature:20.96
-
-Number of Days with 20 degress or more temperature: 1
-
-==============================================================================
-
-Date:2021-05-26 Timestamp:06:00:00 Weather:clear sky Temperature:20.96
-
-Date:2021-05-27 Timestamp:03:00:00 Weather:clear sky Temperature:16.92
-
-Date:2021-05-28 Timestamp:00:00:00 Weather:clear sky Temperature:14.32
-
-Date:2021-05-31 Timestamp:03:00:00 Weather:clear sky Temperature:16.19
-
-Number of Days with Sunny Weather: 4
-
-==============================================================================
 
 External Libraries:
 
