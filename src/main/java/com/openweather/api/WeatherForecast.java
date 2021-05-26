@@ -14,6 +14,7 @@ public class WeatherForecast {
     public static void main(String[] args) throws Exception {
 
         /* Get Weather Forecast for next 6 days for Sydney City and temperature in celsius*/
+        System.out.println("Running Open Weather API with parameters City=Sydney, APPID=7e52a1d6f68ade2f5bd8343ff7e49013, Units=metric ");
         URL url = new URL("http://api.openweathermap.org/data/2.5/forecast?q=Sydney&APPID=7e52a1d6f68ade2f5bd8343ff7e49013&units=metric");
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         conn.setRequestMethod("GET");
