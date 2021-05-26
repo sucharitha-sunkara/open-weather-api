@@ -46,6 +46,8 @@ Number of Days with Sunny Weather: 4
 External Libraries:
 
 Org.json -- added to POM.xml
-apache-maven-3.6.3 -- Create a Envrionment Variable MAVEN_HOME = C:\apache-maven-3.6.3\bin
+
+apache-maven-3.6.3 -- Create a Envrionment Variable MAVEN_HOME = C:\apache-maven-3.6.3\bin ( apache-maven-3.6.3 directory added to repository in case it is needed)
+
 Jdk -1.8.0_271 -- create a Envrionment Variable JAVA_HOME=C:\Program Files\Java\jdk1.8.0_271
 
