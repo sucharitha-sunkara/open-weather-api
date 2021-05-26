@@ -13,7 +13,7 @@ public class WeatherForecast {
 
     public static void main(String[] args) throws Exception {
 
-        /* Get Weather Forecast for next 6 days for Sydney City and temperature in celsius*/
+        /* Get Weather Forecast for next 5 days for Sydney City and temperature in celsius*/
         System.out.println("Running Open Weather API with parameters City=Sydney, APPID=7e52a1d6f68ade2f5bd8343ff7e49013, Units=metric ");
         URL url = new URL("http://api.openweathermap.org/data/2.5/forecast?q=Sydney&APPID=7e52a1d6f68ade2f5bd8343ff7e49013&units=metric");
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
@@ -29,6 +29,7 @@ public class WeatherForecast {
         while(sc.hasNext()) {
             response+=sc.nextLine();
         }
+        System.out.println("\n\n JSON API Response:\n " + response);
         sc.close();
 
         /* Execute when API returns 200 */
@@ -37,18 +38,21 @@ public class WeatherForecast {
             JSONArray list = jObject.getJSONArray("list");
             List<Weather> forecastData = new ArrayList<Weather>();
 
+
             for ( int i=0; i< list.length(); i++){
                 String datetime = list.getJSONObject(i).getString("dt_txt");
                 Weather weather = new Weather();
                 weather.date = datetime.substring(0,10);;
-                weather.timestamp = datetime.substring(12);
+                weather.timestamp = datetime.substring(11);
                 weather.temperature= list.getJSONObject(i).getJSONObject("main").getDouble("temp");
                 weather.weatherCondition = list.getJSONObject(i).getJSONArray("weather").getJSONObject(0).getString("description");
                 forecastData.add(weather);
+
             }
-            System.out.println ("=====================Weather Forecast for next 6 days=========================");
-            System.out.println ("\nNumber of Days with 20 degrees or more temperature: " + getNumberOfDaysWithTemperature(forecastData,20.0));
             System.out.println ("==============================================================================");
+            System.out.println ("\n==================Days With more than 20 degrees Temperature==================");
+            System.out.println ("\nNumber of Days with 20 degrees or more temperature: " + getNumberOfDaysWithTemperature(forecastData,20.0));
+            System.out.println ("\n==================Days With Sunny Weather=====================================");
             System.out.println ("\nNumber of Days with Sunny Weather: " + getNumberOfDaysWithWeather(forecastData,"Clear Sky"));
             System.out.println ("==============================================================================");
 
